@@ -50,7 +50,6 @@ After these experiments, the best CNN model achieved approximately **54% test ac
 **Test Accuracy:** ~54%  
 **Number of Classes:** 8
 
-The final model can also be used to predict the emotion of a new/unseen speech recording.
 
 ## Technologies
 
