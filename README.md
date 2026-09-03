@@ -6,6 +6,28 @@ This project focuses on recognizing human emotions from speech using **Deep Lear
 
 The project was developed using **Python, Librosa, TensorFlow/Keras, and Scikit-learn**.
 
+## Dataset
+
+The project uses the **RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song) Emotional Speech Audio Dataset**.
+
+The speech dataset contains **24 actors** and **8 emotion classes**:
+
+| Code | Emotion |
+|---|---|
+| 01 | Neutral |
+| 02 | Calm |
+| 03 | Happy |
+| 04 | Sad |
+| 05 | Angry |
+| 06 | Fearful |
+| 07 | Disgust |
+| 08 | Surprised |
+
+The dataset was divided based on actors so that the testing data contains speakers that were not used during training.
+
+**Dataset:**  
+https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio
+
 ## Feature Extraction
 
 Audio files were preprocessed and meaningful speech features were extracted using **Librosa**.
