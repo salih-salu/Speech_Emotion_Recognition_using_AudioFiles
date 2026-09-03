@@ -48,12 +48,36 @@ Two deep learning approaches were explored:
 ### CNN
 A **Convolutional Neural Network (CNN)** was used to learn important patterns from the extracted audio features and classify the speech into 8 emotion categories.
 
+The model includes:
+- Convolutional layers
+- Max Pooling
+- Flatten layer
+- Dropout
+- Dense layers
+- Softmax output layer
+
 ### CNN + LSTM
 A **CNN + LSTM hybrid model** was also implemented. CNN extracts important features, while LSTM processes these features as sequences to learn temporal relationships.
 
 However, the CNN + LSTM model produced lower accuracy. Several **hyperparameter tuning experiments** were performed, including changes to learning rate, batch size, dropout, and LSTM units, but significant improvement could not be achieved.
+## CNN + LSTM Hyperparameter Tuning
 
-Therefore, the CNN model was selected as the final model.
+The following experiments were performed to improve the CNN + LSTM model:
+
+| Exp. | Learning Rate | Batch | LSTM Units | Dropout | Test Accuracy |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 0.001 | 32 | 128 | 0.3 | **40.6%** |
+| 2 | 0.001 | 32 | 128 | 0.2 | 36% |
+| 3 | 0.001 | 32 | 128 | 0.5 | 37% |
+| 4 | 0.0005 | 32 | 128 | 0.3 | 39% |
+| 5 | 0.0001 | 32 | 128 | 0.3 | 24% |
+| 6 | Best | 16 | 128 | 0.3 | 36% |
+| 7 | Best | 64 | 128 | 0.3 | 33% |
+| 8 | Best | Best | 64 | 0.3 | 33% |
+| 9 | Best | Best | 256 | 0.3 | 35% |
+| 10 | 0.0005 | 32 | 64 | 0.3 | 27% |
+
+**Best CNN + LSTM Test Accuracy: 40.6%**
 
 ## Optimization
 
@@ -67,6 +91,11 @@ The CNN model was further improved through:
 After these experiments, the best CNN model achieved approximately **54% test accuracy**, which was the highest accuracy obtained during the project.
 
 ## Final Result
+
+| Model | Best Test Accuracy |
+|---|---:|
+| CNN + LSTM | 40.6% |
+| **CNN (Final Model)** | **~54%** |
 
 **Best Model:** CNN  
 **Test Accuracy:** ~54%  
